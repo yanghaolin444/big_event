@@ -31,3 +31,6 @@ body {
   justify-content: flex-end;
   padding: 0 30px 0 0;
 }
+.link a{
+  font-size: 12px;
+}
