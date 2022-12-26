@@ -1,0 +1,50 @@
+.usernews img{
+    position: relative;
+    top: -7px;
+}
+.nav{
+    height: 81px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #23262E;
+    color: #fff;
+}
+.nav .logo{
+    height: 60px;
+}
+.nav .layui-tab{
+    margin-right: 50px;
+}
+.userimg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+}
+.layui-tab-title {
+    border: none;
+}
+.layui-tab-title li span{
+    position: relative;
+    top:-7px;
+}
+.layui-tab-title li i{
+    position: relative;
+    top:-7px;
+}
+.usernews{
+    position: relative;
+}
+.layui-panel{
+    position: absolute;
+    top: 83px !important;
+    left: 1370px !important;
+}
+.layui-nav{
+    margin-top: 81px;
+    border-radius: 0;
+}
+.layui-nav-item i{
+    margin-right: 10px;
+}

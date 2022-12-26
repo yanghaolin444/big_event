@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="./assets/lib/jquery.js"></script>
+  <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <script src="./assets/lib/layui/layui.js"></script>
 </head>
+
 <body>
-  
+  <div class="nav">
+    <img class="logo" src="./assets/images/logo.png" alt="">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class=" usernews" id="demo1">
+          <img class="userimg" src="./assets/images/sample.jpg" alt="">
+          <span>个人中心</span>
+          <i class="layui-icon layui-icon-up" id="icon"></i>
+          <i class="layui-icon layui-icon-down" id="icon-down" style="display: none;"></i>
+          <i class="layui-icon layui-font-12"></i>
+        </li>
+        <li class="usermag">
+          <span>用户管理</span>
+        </li>
+        <li class="back">
+          <i class="layui-icon layui-icon-close-fill"></i>
+          <span style="top: -9px !important;">退出</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="side">
+    <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+      <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+      <li class="layui-nav-item">
+        <a href="javascript:;"  style="background-color: #393D49 !important;">
+          <img class="userimg" src="./assets/images/sample.jpg" alt="">
+          欢迎<span> username</span>
+        </a>
+      </li>
+      <li class="layui-nav-item layui-this">
+        <a href="#"><i class="layui-icon layui-icon-home"></i>首页</a>
+      </li>
+      <li class="layui-nav-item layui-nav-itemed">
+        <a href="javascript:;"><i class="layui-icon layui-icon-read"></i>文章管理</a>
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;"><i class="layui-icon layui-icon-component"></i>文章类别</a></dd>
+          <dd><a href="javascript:;"><i class="layui-icon layui-icon-component"></i>文章列表</a></dd>
+          <dd><a href="javascript:;"><i class="layui-icon layui-icon-component"></i>发布文章</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;"><i class="layui-icon layui-icon-user"></i>个人中心</a>
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;"><i class="layui-icon layui-icon-component"></i>基本资料</a></dd>
+          <dd><a href="javascript:;"><i class="layui-icon layui-icon-component"></i>更换头像</a></dd>
+          <dd><a href="javascript:;"><i class="layui-icon layui-icon-component"></i>重置密码</a></dd>
+        </dl>
+      </li>
+
+    </ul>
+  </div>
 </body>
+<script src="./assets/js/baseAPI.js"></script>
+<script src="./assets/js/index.js"></script>
+
 </html>
