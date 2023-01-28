@@ -3,6 +3,10 @@
     top: -7px;
 }
 .nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 81px;
     display: flex;
     justify-content: space-between;
@@ -47,4 +51,17 @@
 }
 .layui-nav-item i{
     margin-right: 10px;
+}
+.layui-body{
+    position:absolute;
+    z-index: -1;
+    /* overflow: hidden; */
+    margin-top: 81px;
+}
+iframe{
+    width: 100%;
+    height: 1000px;
+}
+a{
+    transition: none !important;
 }

@@ -29,15 +29,20 @@ $(function () {
       , data: [{
         title: '基本资料'
         , id: 100
-        , href: '#'
+        , href: './user/user_info.html',
+        target : "fm"
       }, {
         title: '更换头像'
         , id: 101
-        , href: '#' //开启超链接
+        , href: './user/user_avatar.html' //开启超链接
+        ,
+        target : "fm"
       }, {
         title: '重置密码'
         , id: 102
-        , href: '#' //开启超链接
+        , href: './user/re_password.html' //开启超链接
+        ,
+        target : "fm"
       }]
       , id: 'demo1'
       //菜单被点击的事件
@@ -46,26 +51,46 @@ $(function () {
       }
     });
   });
+  $(".back").on("click", function () {
+    layer.confirm('您确定要退出吗?', { icon: 3, title: '提示' }, function (index) {
+      localStorage.removeItem("token")
+      location.href = "http://127.0.0.1:5500/node/%E5%A4%A7%E4%BA%8B%E4%BB%B6%E9%A1%B9%E7%9B%AE/login.html"
+      layer.close(index);
+    });
+  })
 })
 function getUserInfo() {
   $.ajax({
     method: "GET",
     url: "/my/userinfo",
-    headers: {
-
-
-      Authorization: localStorage.getItem("token") || ''
-    },
+    // headers: {
+    //   Authorization: localStorage.getItem("token") || ''
+    // },
     success: function (res) {
       if (res.status !== 0) {
         return layui.layer.msg("获取用户信息失败！")
       }
-      renderAvatar(res.data)//渲染用户头像
-
-    }
+      if (res.data.nickname !== "") {
+        document.querySelector("#user").innerHTML = " " + res.data.nickname
+      } else {
+        document.querySelector("#user").innerHTML = " " + res.data.username
+      }
+      renderAvatar(res.data)
+    },
+    // complete:function(res){
+    //   if(res.responseJSON.status === 1&&res.responseJSON.message ==="身份认证失败！"){
+    //     localStorage.removeItem("token")
+    //     location.href = "http://127.0.0.1:5500/node/%E5%A4%A7%E4%BA%8B%E4%BB%B6%E9%A1%B9%E7%9B%AE/login.html"
+    //   }
+    // }
   })
 }
+// 渲染用户的头像
 function renderAvatar(user) {
-  let name = user.nickname || user.username
-
+  if (user.user_pic !== null) {
+    // 3.1 渲染图片头像
+    $('.userimg')
+      .attr('src', user.user_pic)
+  }
 }
+
